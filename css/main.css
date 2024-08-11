@@ -1,6 +1,6 @@
 @charset 'utf-8';
 @import url(reset.css);
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;600;700;800;900&display=swap');
 
 /* 
 font-family: "Gothic A1", sans-serif;
@@ -58,7 +58,7 @@ section .sec_tt{
 
 /* HEADER */
 .top_nav{
-    padding:  45px 0;
+    padding:  45px 0 0 0;
 }
 
 .top_nav.fixed{
@@ -109,24 +109,30 @@ form{
 header .main_menu_icon i{
     color: var(--primary-color);
     margin-left: 15px;
-    font-size: 41px;
+    font-size: 35px;
     line-height: 53px;
 }
 
 header .container .search{
-    line-height: 41px;
+    line-height: 35px;
     border: 3px solid var(--primary-color);
     margin: 0;
 }
 
-.search input{
-    width: 210px;
+form .search{
+    width: 240px;
     box-sizing: border-box;
     border: 3px solid var(--primary-color);
-    padding: 0;
+    display: inline-flex;
+}
+
+.search input{
     border: 0;
+    padding: 0 0 0 10px;
+    display: inline-flex;
     position: relative;
     outline: none;
+    width: 174px;
 }
 
 .search i{
@@ -139,7 +145,66 @@ header .container .search{
     font-size: 25px;
 }
 
-.contain .slides{
-    width: 1920px;
-    margin: 0;
+.contain .slide_wrapper{
+    position: relative;
+    overflow: hidden;
+}
+
+.contain .slide{
+    width: 3840px;
+    display: flex;
+}
+
+.contain .baner_title{
+    position: absolute;
+    top: calc(50% - 67.9px); left: 300px;
+    /* transform: translate(-50% 0); */
+}
+
+.contain .baner_title button{
+    cursor: pointer;
+}
+
+.contain .slides li img{
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.contain .slides li h2 .gel{
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.contain .slides li h2 .top{
+    vertical-align: 12px;
+    font-size: 21px;
+}
+
+.contain .slides li p{
+    font-size: var(--font-site-map-title);
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 3px 0 24px 0;
+}
+
+.contain .slides li button{
+    width: 163px;
+    height: 45px;
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.controls span{
+    position: absolute;
+    left: 0; top: calc(50% - 25px);
+    color: #fff;
+    font-size: 50px;
+}
+
+.controls .right{
+    position: absolute;
+    left: 100%;
 }

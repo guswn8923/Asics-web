@@ -43,6 +43,7 @@ body{
     font: var(--font-site-map-title)/var(--lh) "Gothic A1", sans-serif;
     color: var(--black-color);
     overflow-y: scroll;
+    padding-top: 203px;
 }
 
 section .sec_sub_tt{
@@ -60,13 +61,21 @@ section .sec_tt{
 /* HEADER */
 .top_nav{
     padding:  45px 0 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.top_nav nav{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .top_nav.fixed{
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     background: rgba(225, 225, 225, .5);
     box-shadow: 0 3px 3px rgba(0 , 0, 0, .06);
 }
@@ -83,7 +92,6 @@ header nav > div{
 
 .top_nav nav{
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
@@ -102,6 +110,7 @@ header nav > div{
     height: 30px;
     overflow: hidden;
     transition:height 0.5s ease-out;
+    padding: 0;
 }
 
 nav > ul{
@@ -109,14 +118,15 @@ nav > ul{
 }
 
 nav > ul > li{
-    line-height: 26px;
-    
+    line-height: 35px;
 }
 
 nav > ul > li div{
     width: 100%;
     position: absolute;
     display: none;
+    background: #fff;
+    width: 100%;
 }
 
 
@@ -124,12 +134,11 @@ nav > ul > li:hover div{
     display: block;
 }
 
-
-
-
 form{
     display: flex;
     gap: 15px;
+    align-items: flex-start;
+    margin: 25px 0;
 }
 
 header .main_menu_icon i{
@@ -179,7 +188,6 @@ form .search{
 }
 
 .contain .slides{
-    
     width: 5760px;
     margin: 0;
     padding: 0;
@@ -198,6 +206,7 @@ form .search{
     background-repeat: no-repeat;
     background-size: cover;
     list-style: none;
+    position: relative;
 }
 
 .slide1 {
@@ -214,9 +223,9 @@ form .search{
 
 .slides>li .contents{
     position: absolute;
-    left: 50%;
+    left: 216px;
     top: 50%;
-
+    transform: translate(0,-50%);
 }
 
 .contain .slides>li .contents h2{

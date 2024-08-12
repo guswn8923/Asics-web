@@ -89,7 +89,7 @@ header nav > div{
 .logo a{
     width: 128px;
     height: 48px;
-    background: url(../img/아식스\ 로고.PNG) no-repeat;
+    background: url(../imgs/logo.png) no-repeat;
     display: block;
     text-indent: -999999em;
 
@@ -148,63 +148,89 @@ form .search{
 .contain .slide_wrapper{
     position: relative;
     overflow: hidden;
+    width: 100%;
+    height: 540px;
 }
 
 .contain .slide{
-    width: 3840px;
+    position: relative;
+    width: 5760px;
+    margin: 0;
+    padding: 0;
+    height: 0;
     display: flex;
 }
 
-.contain .baner_title{
+.contain .slide.animated{
+    left: 0;
+    transition: left 0.4s;
+}
+
+.contain .slide>li{
     position: absolute;
-    top: calc(50% - 67.9px); left: 300px;
-    /* transform: translate(-50% 0); */
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    list-style: none;
 }
 
-.contain .baner_title button{
-    cursor: pointer;
+.slide1 {
+    background-image: url(../imgs/main_banner3.jpg)
 }
 
-.contain .slides li img{
-    width: 100%;
-    object-fit: cover;
-
+.slide2 {
+    background-image: url(../imgs/main_banner4.jpg)
 }
 
-.contain .slides li h2 .gel{
+.slide3 {
+    background-image: url(../imgs/main_banner6.jpg)
+}
+
+.contain .slide>li .contents{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contain .slides>li .contents h2{
     font-size: 36px;
     font-weight: 900;
     color: var(--primary-color);
     letter-spacing: -0.5px;
 }
 
-.contain .slides li h2 .top{
+.contain .slides>li .contents .top{
     vertical-align: 12px;
     font-size: 21px;
 }
 
-.contain .slides li p{
+.contain .slides>li .contents p{
     font-size: var(--font-site-map-title);
     color: var(--primary-color);
     font-weight: 600;
     padding: 3px 0 24px 0;
 }
 
-.contain .slides li button{
+.contain .slides>li .contents a{
     width: 163px;
     height: 45px;
     background: var(--primary-color);
     color: var(--white-color);
 }
 
-.controls span{
+
+.slide_wrapper .controls{
     position: absolute;
-    left: 0; top: calc(50% - 25px);
-    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999999;
+    color: var(--white-color);
     font-size: 50px;
 }
 
-.controls .right{
-    position: absolute;
-    left: 100%;
-}

@@ -59,6 +59,11 @@ section .sec_tt{
 }
 
 /* HEADER */
+.top_nav .container{
+    background: #fff;
+    width: 100%;
+}
+
 .top_nav{
     padding:  45px 0 0 0;
     position: absolute;
@@ -71,7 +76,6 @@ section .sec_tt{
 .top_nav nav{
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
 }
 
 .top_nav.fixed{
@@ -105,7 +109,7 @@ header nav > div{
 }
 
 .main_menu{
-    margin: 45px 0;
+    margin: 45px 80px;
     font-weight: 700;
     height: 30px;
     overflow: hidden;
@@ -114,50 +118,50 @@ header nav > div{
 }
 
 nav > ul{
-    display: flex; gap: 50px;
+    display: flex;
+    gap: 50px;
 }
 
 nav > ul > li{
     line-height: 35px;
 }
 
+
 nav > ul > li div{
     width: 100%;
     position: absolute;
     display: none;
-    background: #fff;
-    width: 100%;
 }
 
-
 nav > ul > li:hover div{
-    display: block;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 form{
     display: flex;
     gap: 15px;
     align-items: flex-start;
-    margin: 25px 0;
+    margin: 35px 80px 0 0;
+}
+
+header .main_menu_icon{
+    display: inline-flex;
+    gap: 15px;
 }
 
 header .main_menu_icon i{
     color: var(--primary-color);
-    margin-left: 15px;
-    font-size: 35px;
-    line-height: 53px;
+    font-size: 26px;
+    line-height: 48px;
 }
 
 header .container .search{
-    line-height: 35px;
-    border: 3px solid var(--primary-color);
+    line-height: 36px;
+    border: 2px solid var(--primary-color);
     margin: 0;
-}
-
-form .search{
     width: 240px;
     box-sizing: border-box;
-    border: 3px solid var(--primary-color);
     display: inline-flex;
 }
 
@@ -167,12 +171,13 @@ form .search{
     display: inline-flex;
     position: relative;
     outline: none;
-    width: 174px;
+    width: 185px;
+    height: 36px;
 }
 
 .search i{
-    width: 53px;
-    line-height: 53px;
+    width: 44px;
+    line-height: 44px;
     background: var(--primary-color);
     color: var(--white-color);
     text-align: center;
@@ -244,7 +249,7 @@ form .search{
     font-size: var(--font-site-map-title);
     color: var(--primary-color);
     font-weight: 600;
-    padding: 3px 0 24px 0;
+    padding: 13px 0 24px 0;
 }
 
 .contain .slides>li .contents a{
@@ -252,6 +257,7 @@ form .search{
     color: var(--white-color);
     padding: 10px 30px;
     font-size: 16px;
+    text-align: center;
 }
 
 
@@ -263,4 +269,3 @@ form .search{
     color: var(--white-color);
     font-size: 50px;
 }
-

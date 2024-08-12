@@ -110,6 +110,7 @@ nav > ul{
 
 nav > ul > li{
     line-height: 26px;
+    
 }
 
 nav > ul > li div{
@@ -122,6 +123,9 @@ nav > ul > li div{
 nav > ul > li:hover div{
     display: block;
 }
+
+
+
 
 form{
     display: flex;
@@ -175,7 +179,7 @@ form .search{
 }
 
 .contain .slides{
-    position: relative;
+    
     width: 5760px;
     margin: 0;
     padding: 0;
@@ -210,7 +214,7 @@ form .search{
 
 .slides>li .contents{
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 50%;
 
 }

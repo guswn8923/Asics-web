@@ -96,9 +96,12 @@ header nav > div{
 }
 
 .main_menu{
-    gap: 50px;
+    display: flex;
+    justify-content: space-between;
     margin: 45px 0;
     font-weight: 700;
+    height: 26px;
+    overflow: hidden;
 }
 
 form{
@@ -152,7 +155,7 @@ form .search{
     height: 540px;
 }
 
-.contain .slide{
+.contain .slides{
     position: relative;
     width: 5760px;
     margin: 0;
@@ -161,17 +164,14 @@ form .search{
     display: flex;
 }
 
-.contain .slide.animated{
+.contain .slides.animated{
     left: 0;
     transition: left 0.4s;
 }
 
-.contain .slide>li{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 0;
-    width: 0;
+.contain .slides>li{
+    height: 540px;
+    width: 1920px;
     text-align: center;
     background-repeat: no-repeat;
     background-position: center center;

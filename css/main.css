@@ -42,6 +42,7 @@ main>section{
 body{
     font: var(--font-site-map-title)/var(--lh) "Gothic A1", sans-serif;
     color: var(--black-color);
+    overflow-y: scroll;
 }
 
 section .sec_sub_tt{
@@ -96,12 +97,30 @@ header nav > div{
 }
 
 .main_menu{
-    display: flex;
-    justify-content: space-between;
     margin: 45px 0;
     font-weight: 700;
-    height: 26px;
+    height: 30px;
     overflow: hidden;
+    transition:height 0.5s ease-out;
+}
+
+nav > ul{
+    display: flex; gap: 50px;
+}
+
+nav > ul > li{
+    line-height: 26px;
+}
+
+nav > ul > li div{
+    width: 100%;
+    position: absolute;
+    display: none;
+}
+
+
+nav > ul > li:hover div{
+    display: block;
 }
 
 form{
@@ -172,9 +191,7 @@ form .search{
 .contain .slides>li{
     height: 540px;
     width: 1920px;
-    text-align: center;
     background-repeat: no-repeat;
-    background-position: center center;
     background-size: cover;
     list-style: none;
 }
@@ -191,11 +208,11 @@ form .search{
     background-image: url(../imgs/main_banner6.jpg)
 }
 
-.contain .slide>li .contents{
+.slides>li .contents{
     position: absolute;
-    left: 50%;
+    left: 0;
     top: 50%;
-    transform: translate(-50%, -50%);
+
 }
 
 .contain .slides>li .contents h2{
@@ -218,10 +235,10 @@ form .search{
 }
 
 .contain .slides>li .contents a{
-    width: 163px;
-    height: 45px;
     background: var(--primary-color);
     color: var(--white-color);
+    padding: 10px 30px;
+    font-size: 16px;
 }
 
 

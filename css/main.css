@@ -116,12 +116,13 @@ nav > ul{
     transition:height 0.5s ease-out;
     padding: 0;
     display: flex;
-    gap: 50px;
 }
 
 
 nav > ul > li{
     line-height: 35px;
+    padding: 0;
+    padding-right: 50px;
 }
 
 nav > ul > li div{

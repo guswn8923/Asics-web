@@ -107,6 +107,8 @@ header nav > div{
 
 }
 
+/*sitemap*/
+
 nav > ul{
     margin: 45px 80px;
     font-weight: 700;
@@ -147,7 +149,7 @@ nav > ul > li:hover div{
 nav > ul > li div dl dt{
     font-weight: 700;
 }
-
+/*sitemap icon*/
 form{
     display: flex;
     gap: 15px;
@@ -182,7 +184,7 @@ header .container .search{
     position: relative;
     outline: none;
     width: 185px;
-    height: 36px;
+    height: 45px;
 }
 
 .search i{
@@ -194,7 +196,7 @@ header .container .search{
     display: inline-block;
     font-size: 25px;
 }
-
+/*sitemap slide*/
 .contain{
     position: relative;
 }
@@ -273,7 +275,7 @@ header .container .search{
     text-align: center;
 }
 
-
+/*sitemap button*/
 .slide_wrapper .controls{
     position: absolute;
     top: 50%;
@@ -288,4 +290,26 @@ header .container .search{
 
 #left{
     left: 20px;
+}
+
+/*main*/
+/*best-item*/
+main h2{
+    font-size: var(--font-site-map-title);
+    font-weight: 700;
+    margin:0 0 20px 80px;
+}
+
+main h3{
+    font-size: var(--font-main);
+    font-weight: 500;
+    margin: 0 0 45px 80px;
+}
+
+main .main_img{
+    margin: 0 80px 50px 80px;
+}
+
+.best-contain{
+    display: flex;
 }

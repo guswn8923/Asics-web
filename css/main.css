@@ -308,35 +308,36 @@ main h3{
 }
 
 main .main_img{
-    margin: 0 0 50px 0;
+    margin: 0 80px 50px 0;
 }
 
 .contens{
     display: flex;
+    margin:0 80px;
 }
 
 .best-wrapper{
     position: relative;
-    width: 1760px;
+    width: 1074px;
 }
 
-.best-contain{
+.best-container{
     width: 4000px;
     display: flex;
     gap: 30px;
     align-items: flex-start;
 }
 
-.best-contain>li{
+.best-container>li{
     width: 338px;
-    border: 2px solid transparent 
+    border: 2px solid transparent;
 }
 
-.best-contain>li:hover{
+.best-container>li:hover{
     border-color: var(--primary-color);
 }
 
-.best-contain>li .imgwrap{
+.best-container>li .imgwrap{
     background: var(--secondary-color);
     height: 450px;
     display: flex;
@@ -345,20 +346,20 @@ main .main_img{
 }
 
 
-.best-contain li div+div{
+.best-container li div+div{
     background: var(--white-color);
 }
 
-.best-contain li div h4{
+.best-container li div h4{
     margin: 22px 0 10px 27px;
 }
 
-.best-contain li div>p{
+.best-container li div>p{
     margin: 10px 0 10px 27px;
     font-weight: 700;
 }
 
-.best-contain li div span{
+.best-container li div span{
     display: inline-flex;
     width: 20px;
     height: 20px;
@@ -437,11 +438,11 @@ main .main_img{
     justify-content: space-between;
     border-top: 2px solid var(--primary-color);
 }
-.hall{
+/* .hall{
     display: none;
-}
+} */
 
-.best-contain>li:hover .hall{
+.best-container>li:hover .hall{
     display: block;
 }
 
@@ -474,7 +475,7 @@ main .main_img{
 
 
 /*best item but*/
-.control{
+.best-wrapper .control{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -509,4 +510,84 @@ main .main_img{
     color: var(--white-color);
     text-align: center;
     font-weight: 700;
+    margin: 50px 798px 50px 100px;
+
+}
+
+/*new_arrival*/
+.arrival-container{
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.arrival-container>li{
+    width: 338px;
+    border: 2px solid transparent;
+}
+
+.arrival-container>li:hover{
+    border-color: var(--primary-color);
+}
+
+.arrival-container>li .imgwrap{
+    background: var(--secondary-color);
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrival-container li div+div{
+    background: var(--white-color);
+}
+
+.arrival-container li div h4{
+    margin: 22px 0 10px 27px;
+}
+
+.arrival-container li div>p{
+    margin: 10px 0 10px 27px;
+    font-weight: 700;
+}
+
+.arrival-container li div span{
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/*new_arrival color*/
+.skyblue{
+    background: #B5C5CD;
+}
+
+.light-beige{
+    background: #CFC3AB;
+}
+
+.darkgreen{
+    background: #305969;
+}
+
+.rock{
+    background: #585859; 
+}
+
+.brilliant{
+    background: #085584;  
+}
+
+.blue{
+    background: #053b58; 
+}
+
+.bage{
+    background: #b8b5aa;
+}
+
+.sky{
+    background: #7694b8; 
 }

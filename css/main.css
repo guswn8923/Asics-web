@@ -327,6 +327,11 @@ main .main_img{
 
 .best-contain>li{
     width: 338px;
+    border: 2px solid transparent
+}
+
+.best-contain>li:hover{
+    border-color: var(--primary-color);
 }
 
 .best-contain>li .imgwrap{
@@ -340,15 +345,14 @@ main .main_img{
 
 .best-contain li div+div{
     background: var(--white-color);
-    border-bottom: 2px solid #000;
 }
 
 .best-contain li div h4{
-    margin: 22px 0 10px 16px;
+    margin: 22px 0 10px 27px;
 }
 
 .best-contain li div>p{
-    margin: 10px 0 10px 16px;
+    margin: 10px 0 10px 27px;
     font-weight: 700;
 }
 
@@ -410,12 +414,55 @@ main .main_img{
 
 /*best item size*/
 .size ul{
+    width: 290px;
+    flex-wrap: wrap;
     display: flex;
-    gap: 14px;
+    gap: 10px 14px; 
+    padding: 16px 27px 15px 27px;
+    font-size: var(--font-site-map);
 }
 
-.size ul{
-    white-space: wrap;
+.size ul li{
+    cursor: pointer;
+}
+
+hr{
+    width: 290px;
+    background: #9F9F9F;
+    border-width: 1px 0 0 0;
+}
+
+.size>div{
+    display: flex;
+    border-top: 2px solid var(--primary-color);
+    justify-content: space-between;
+}
+
+.icon{
+    margin-left: 27px;
+    
+}
+
+.icon a{
+    margin-right: 20px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+    color: var(--primary-color);
+}
+
+.size div+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 167px;
+    height: 50px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-size: var(--font-site-map-title);
+    font-weight: 700;
+    
+
 }
 
 

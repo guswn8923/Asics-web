@@ -320,38 +320,31 @@ main .main_img{
 }
 
 .best-contain{
-    
+    width: 4000px;
     display: flex;
     gap: 30px;
 }
 
-.best-contain li{
-    position: relative;
+.best-contain>li{
+    width: 338px;
+}
+
+.best-contain>li .imgwrap{
     background: var(--secondary-color);
-    width: 338px;
     height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.best-contain li img{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
 
-.best-contain li div{
-    position: absolute;
-    left: 0;
-    bottom: -140px;
+.best-contain li div+div{
     background: var(--white-color);
-    width: 338px;
-    height: 140px;
-    z-index: -1;
     border-bottom: 2px solid #000;
 }
 
 .best-contain li div h4{
-    margin: 24px 0 10px 16px;
+    margin: 22px 0 10px 16px;
 }
 
 .best-contain li div>p{
@@ -367,6 +360,7 @@ main .main_img{
     margin-right: 5px;
 }
 
+/*bset item color*/
 .light-blue{
     background: linear-gradient(#70CDCD 50%, #5BEA99 50% 100%);
     transform: rotate(45deg);
@@ -414,13 +408,24 @@ main .main_img{
     transform: rotate(45deg);
 }
 
-/*best item but*/
+/*best item size*/
+.size ul{
+    display: flex;
+    gap: 14px;
+}
 
+.size ul{
+    white-space: wrap;
+}
+
+
+/*best item but*/
 .control{
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80px;
-    line-height: 80px;
+    height: 80px;
     background: rgba(217, 217, 217, .5);
     font-size: 50px;
     color: var(--white-color);

@@ -308,7 +308,7 @@ main h3{
 }
 
 main .main_img{
-    margin: 0 80px 50px 80px;
+    margin: 0 0 50px 0;
 }
 
 .contens{
@@ -317,17 +317,19 @@ main .main_img{
 
 .best-wrapper{
     position: relative;
+    width: 1760px;
 }
 
 .best-contain{
     width: 4000px;
     display: flex;
     gap: 30px;
+    align-items: flex-start;
 }
 
 .best-contain>li{
     width: 338px;
-    border: 2px solid transparent
+    border: 2px solid transparent 
 }
 
 .best-contain>li:hover{
@@ -413,6 +415,10 @@ main .main_img{
 }
 
 /*best item size*/
+/* .size{
+    border-bottom: 2px solid var(--primary-color);
+} */
+
 .size ul{
     width: 290px;
     flex-wrap: wrap;
@@ -426,17 +432,19 @@ main .main_img{
     cursor: pointer;
 }
 
-hr{
-    width: 290px;
-    background: #9F9F9F;
-    border-width: 1px 0 0 0;
+.hall>div{
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid var(--primary-color);
+}
+.hall{
+    display: none;
 }
 
-.size>div{
-    display: flex;
-    border-top: 2px solid var(--primary-color);
-    justify-content: space-between;
+.best-contain>li:hover .hall{
+    display: block;
 }
+
 
 .icon{
     margin-left: 27px;
@@ -444,8 +452,7 @@ hr{
 }
 
 .icon a{
-    margin-right: 20px;
-    text-align: center;
+    margin-right: 18px;
     line-height: 50px;
     font-size: 25px;
     color: var(--primary-color);
@@ -455,7 +462,7 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 167px;
+    width: 50%;
     height: 50px;
     background: var(--primary-color);
     color: var(--white-color);

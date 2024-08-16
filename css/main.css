@@ -475,7 +475,7 @@ main .main_img{
 
 
 /*best item but*/
-.best-wrapper .control{
+.control{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -510,14 +510,18 @@ main .main_img{
     color: var(--white-color);
     text-align: center;
     font-weight: 700;
-    margin: 50px 798px 50px 100px;
-
 }
 
 /*new_arrival*/
+.arrival-wrapper{
+    width: 1760px;
+    margin: 0 80px;
+    position: relative;
+}
+
 .arrival-container{
     display: flex;
-    gap: 30px;
+    gap: 17.5px;
     align-items: flex-start;
 }
 
@@ -590,4 +594,137 @@ main .main_img{
 
 .sky{
     background: #7694b8; 
+}
+
+/*new_arrival but*/
+
+#prev-arrival{
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translate(-50% -50%);
+}
+
+#next-arrival{
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translate(-50% -50%);
+}
+
+/*sub_banner*/
+.sub_banner{
+    width: 100%;
+    height: 210px;
+    padding: 0;
+    margin: 85px 0;
+    background:
+    url(../imgs/sub-banner-back1.png)no-repeat top left,
+    url(../imgs/sub-banner-back2.png)no-repeat right top, 
+    linear-gradient(#646AF0 10%, rgba(251,79,255,.5) 100%);
+}
+
+.sub_banner>h4{
+    text-align: center;
+    font-size: var(--font-Banner-main);
+    font-weight: 700;
+    color: var(--white-color);
+    padding: 75px 0 25px 0;
+}
+
+.sub_banner h5{
+    font-size: var(--font-site-map-title);
+    color: var(--white-color);
+    text-align: center;
+}
+
+/*exercise item*/
+.exitem-wrapper{
+    position: relative;
+    width: 1074px;
+}
+
+.exitem-container{
+    width: 4000px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.exitem-container>li{
+    width: 338px;
+    border: 2px solid transparent;
+}
+
+.exitem-container>li:hover{
+    border-color: var(--primary-color);
+}
+
+.exitem-container>li .imgwrap{
+    background: var(--secondary-color);
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.exitem-container li div+div{
+    background: var(--white-color);
+}
+
+.exitem-container li div h4{
+    margin: 22px 0 10px 27px;
+}
+
+.exitem-container li div>p{
+    margin: 10px 0 10px 27px;
+    font-weight: 700;
+}
+
+.exitem-container li div span{
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/*exercise item color*/
+.yellow{
+    background: linear-gradient(#E0C28D 50%, #fff 50% 100%);
+    transform: rotate(45deg);
+    border: 1px solid #000;
+}
+
+.white-black{
+    background: linear-gradient(#000 50%, #fff 50% 100%);
+    transform: rotate(45deg);
+    border: 1px solid #000;
+}
+
+.light-gray{
+    background: linear-gradient(#F3F3F1 50%, #fff 50% 100%);
+    transform: rotate(45deg);
+    border: 1px solid #000;
+}
+
+.blue-expanse{
+    background: linear-gradient(#3C96CA 50%, #0A0D16 50% 100%);
+    transform: rotate(45deg);
+}
+
+.asics-rad{
+    background: linear-gradient(#C74149 50%, #fff 50% 100%);
+    transform: rotate(45deg);
+    border: 1px solid #000;
+}
+
+.asics-blue{
+    background: linear-gradient(#3B59B0 50%, #fff 50% 100%);
+    transform: rotate(45deg);
+    border: 1px solid #000;
+}
+
+.light-yellow{
+    background: linear-gradient(#C2E616 50%, #FF6156 50% 100%);
+    transform: rotate(45deg);
 }

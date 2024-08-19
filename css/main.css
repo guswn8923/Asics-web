@@ -856,30 +856,35 @@ footer .container{
     font-weight: 700;
 }
 
-.footer_top p a{
-    color: var(--white-color);
+.footer_top div+div>a{
     width: 60px;
     height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     border: 2px solid var(--white-color);
     border-radius: 50%;
-    display: block;
-    text-indent: -999999em;
     margin: 0 10px;
 }
 
-.footer_top .instagram{
-    margin: 0 0 0 35px;
+.footer_top a img{
+    color: var(--white-color);
+    height: 30px;
+    display: block;
+    text-indent: -999999em;
+    
+}
+.footer_top a .instagram{
+width: 30px;
 }
 
-.footer_top .instagram a{
-    background: url(../imgs/footer1.png) no-repeat;
+.footer_top a .kakaotalk{
+    width: 33px;
 }
-.footer_top .kakaotalk a{
-    background: url(../imgs/footer2.png) no-repeat;
-}
-.footer_top .facebook a{
-    background: url(../imgs/footer3.png) no-repeat;
+
+.footer_top a .facebook{
+    width: 16.15px;
 }
 
 footer hr{

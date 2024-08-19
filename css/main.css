@@ -847,7 +847,7 @@ main .main_img{
 /* ASICS EVENT but */
 #prev-event{ 
     position: absolute;
-    left: 80px;
+    left: 0px;
     top: 167px;
 }
 

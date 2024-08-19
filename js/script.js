@@ -11,3 +11,29 @@ meuns.forEach(item=>{
     main_menu.style.height = mainOrgHeight + 'px';
   });
 });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const goTop = document.querySelector('#go-top');
+
+  window.addEventListener('scroll',()=>{
+    let scrollAmt = window.scrollY;
+    if(scrollAmt > 600){
+      goTop.classList.add('active');
+    }else{
+      goTop.classList.remove('active');
+    }
+  });
+
+  goTop.addEventListener('click',(e)=>{
+    e.preventDefault();
+    window.scrollTo({
+      left:0,
+      top:0,
+      behavior:'smooth'
+    });
+  });
+});

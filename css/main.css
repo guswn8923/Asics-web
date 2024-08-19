@@ -314,13 +314,16 @@ main .main_img{
 
 .best_contents{
     height: 592px;
+    padding-top: 648px;
     padding-bottom: 100px;
+    position: relative;
 }
 
 .contens{
     display: flex;
     margin:0 80px;
     width: 1760px;
+    top: 0;
     position: absolute;
 }
 
@@ -496,23 +499,21 @@ main .main_img{
 
 #prev{
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate(0,-50%);
+    left: 2px;
+    top: 185px;
 }
 
 #next{
     position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(0,-50%);
+    right: 6px;
+    top: 185px;
 }
 .best_contents > p{
  text-align: center;
 }
 
 .all{
-    display: block;
+    display: inline-block;
     width: 165px;
     line-height: 41px;
     border-radius: 5px;
@@ -523,11 +524,19 @@ main .main_img{
 }
 
 /*new_arrival*/
+.arrival_contents{
+    height: 592px;
+    padding-top: 648px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
 .arrival-wrapper{
     display: flex;
     width: 1760px;
     margin: 0 80px;
-    position: relative;
+    top: 0;
+    position: absolute;
     overflow: hidden;
 }
 
@@ -616,15 +625,17 @@ main .main_img{
 
 #prev-arrival{
     position: absolute;
-    left: 0; top: 50%;
-    transform: translate(-50% -50%);
+    left: 2px; top: 185px;
 }
 
 #next-arrival{
     position: absolute;
-    right: 0; top: 50%;
-    transform: translate(-50% -50%);
+    right: 15px; top: 185px;
 }
+
+.arrival_contents > p{
+    text-align: center;
+   }
 
 /*sub_banner*/
 .sub_banner{
@@ -653,8 +664,19 @@ main .main_img{
 }
 
 /*exercise item*/
-.exitem-wrapper{
-    width: 1074px;
+.exercise_contents{
+    height: 592px;
+    padding-top: 648px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.exercise_contents .contens{
+    display: flex;
+    margin: 0 80px ;
+    top: 0;
+    width: 1760px;
+    position: absolute;
 }
 
 .exitem-container{
@@ -766,7 +788,13 @@ main .main_img{
     transform: rotate(45deg);
 }
 
+.exercise_contents > p{
+    text-align: center;
+   }
+
 /*ASICS EVENT */
+
+
 .asics_event h2{
     text-transform: uppercase;
     font-size: var(--font-Banner-main);
@@ -777,7 +805,9 @@ main .main_img{
 
 .event-wrapper{
     overflow: hidden;
-    padding: 100px;
+    margin: 0 80px;
+    padding: 20px 0;
+    position: relative;
 }
 
 .event-contain{
@@ -785,7 +815,6 @@ main .main_img{
     width: 1760px;
     margin: 0 80px;
     gap: 15px;
-    position: relative;
 }
 
 .event-contain img{
@@ -816,17 +845,17 @@ main .main_img{
 /* ASICS EVENT but */
 #prev-event{ 
     position: absolute;
-    left: 0;
-    top: 38%;
-    transform: translate(0 -50%);
+    left: 80px;
+    top: 167px;
 }
 
 #next-event{
     position: absolute;
     right: 0;
-    top: 38%;
-    transform: translate(0 -50%);
+    top: 167px;
 }
+
+   
 
 /* footer  */
 footer .container{
@@ -925,6 +954,6 @@ width: 30px;
 
 .kcp{
     position: absolute;
-    right: 92px;
+    right: 12px;
     top: 3px;
 }

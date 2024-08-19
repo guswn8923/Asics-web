@@ -974,9 +974,15 @@ width: 30px;
     border-radius: 50%;
     text-align: center;
     font-weight: 700;
+    opacity: 0;
 }
 
 #go-top:hover{
     background: var(--primary-color);
     color: var(--white-color);
+}
+
+#go-top.active{
+    opacity: 1;
+    pointer-events: auto;
 }

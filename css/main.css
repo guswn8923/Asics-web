@@ -30,7 +30,7 @@ font-family: "Gothic A1", sans-serif;
 /* 레이아웃 */
 
 main>section{
-    padding: 85px 0;
+    padding: 85px 0 0 0;
 }
 
 .container{
@@ -317,6 +317,7 @@ main .main_img{
     padding-top: 648px;
     padding-bottom: 100px;
     position: relative;
+    box-sizing: border-box;
 }
 
 .contens{
@@ -529,6 +530,7 @@ main .main_img{
     padding-top: 648px;
     padding-bottom: 100px;
     position: relative;
+    box-sizing: border-box;
 }
 
 .arrival-wrapper{
@@ -642,7 +644,7 @@ main .main_img{
     width: 100%;
     height: 210px;
     padding: 0;
-    margin: 85px 0;
+    margin: 85px 0 0 0;
     background:
     url(../imgs/sub-banner-back1.png)no-repeat top left,
     url(../imgs/sub-banner-back2.png)no-repeat right top, 
@@ -669,6 +671,7 @@ main .main_img{
     padding-top: 648px;
     padding-bottom: 100px;
     position: relative;
+    box-sizing: border-box;
 }
 
 .exercise_contents .contens{
@@ -805,7 +808,7 @@ main .main_img{
 
 .event-wrapper{
     overflow: hidden;
-    margin: 0 80px;
+    margin: 0 80px 82px 80px;
     padding: 20px 0;
     position: relative;
 }
@@ -813,7 +816,6 @@ main .main_img{
 .event-contain{
     display: flex;
     width: 1760px;
-    margin: 0 80px;
     gap: 15px;
 }
 
@@ -956,4 +958,25 @@ width: 30px;
     position: absolute;
     right: 12px;
     top: 3px;
+}
+
+/*top but*/
+#go-top{
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    background: #fff;
+    color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(203, 179, 242, .8);
+    bottom: 48px;
+    right: 35px;
+    line-height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 700;
+}
+
+#go-top:hover{
+    background: var(--primary-color);
+    color: var(--white-color);
 }

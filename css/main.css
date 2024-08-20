@@ -334,10 +334,12 @@ main .main_img{
 }
 
 .best-container{
+    position: relative;
     width: 4000px;
     display: flex;
     gap: 30px;
     align-items: flex-start;
+    transition: left 0.3s ease;
 }
 
 .best-container>li{
@@ -487,6 +489,7 @@ main .main_img{
 
 /*best item but*/
 .control{
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -499,16 +502,21 @@ main .main_img{
 }
 
 #prev{
-    position: absolute;
     left: 2px;
     top: 185px;
 }
 
 #next{
-    position: absolute;
     right: 6px;
     top: 185px;
 }
+
+#prev.disabled,
+#next.disabled{
+    display: none;
+}
+
+
 .best_contents > p{
  text-align: center;
 }
@@ -543,9 +551,11 @@ main .main_img{
 }
 
 .arrival-container{
+    position: relative;
     display: flex;
     gap: 10px;
     align-items: flex-start;
+    transition: left 0.3s ease;
 }
 
 .arrival-container>li{
@@ -625,14 +635,17 @@ main .main_img{
 
 /*new_arrival but*/
 
-#prev-arrival{
-    position: absolute;
+#prearr{
     left: 2px; top: 185px;
 }
 
-#next-arrival{
-    position: absolute;
+#nexarr{
     right: 15px; top: 185px;
+}
+
+#prearr.disabled,
+#nexarr.disabled{
+    display: none;
 }
 
 .arrival_contents > p{
@@ -814,9 +827,11 @@ main .main_img{
 }
 
 .event-contain{
+    position: relative;
     display: flex;
     width: 1760px;
     gap: 15px;
+    transition: left 0.3s ease;
 }
 
 .event-contain img{
@@ -845,14 +860,12 @@ main .main_img{
 }
 
 /* ASICS EVENT but */
-#prev-event{ 
-    position: absolute;
+#prev_en{ 
     left: 0px;
     top: 167px;
 }
 
-#next-event{
-    position: absolute;
+#next_en{
     right: 0;
     top: 167px;
 }

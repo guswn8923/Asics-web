@@ -10,6 +10,34 @@ let leftBtn = slideWrapper.querySelector('#left');
 let rightBtn = slideWrapper.querySelector('#right');
 let timer;
 let slideWidth = 0;
+let bsetWrapper = document.querySelector('.best-wrapper');
+let bsetContainer = bsetWrapper.querySelector('.best-container');
+let bestslides = bsetContainer.querySelectorAll('.best-container > li');
+let bestCount = bestslides.length;
+let bestWidth = 338;
+let bestgap = 30
+let bsetmaxSlide = 3;
+let nextBtn = bsetWrapper.querySelector('#next');
+let prevBtn = bsetWrapper.querySelector('#prev'); 
+let arrWrapper = document.querySelector('.arrival-wrapper');
+let arrContainer = arrWrapper.querySelector('.arrival-container');
+let arrslides = arrContainer.querySelectorAll('.arrival-container > li');
+let arrnextBtn = arrWrapper.querySelector('#nexarr');
+let arrprevBtn = arrWrapper.querySelector('#prearr'); 
+let arrCount = arrslides.length;
+let arrWidth = 338;
+let arrgap = 10;
+let arrmaxSlide = 5;
+let eventWrapper = document.querySelector('.event-wrapper');
+let eventContainer = eventWrapper.querySelector('.event-contain');
+let eventslides = eventContainer.querySelectorAll('.event-contain > li');
+let eventnextBtn = eventWrapper.querySelector('#next_en');
+let eventprevBtn = eventWrapper.querySelector('#prev_en'); 
+let eventCount = eventslides.length;
+let eventWidth = 365;
+let eventgap = 15;
+let eventmasSlide = 5;
+
 
 //sitemap
 meuns.forEach(item=>{
@@ -23,7 +51,7 @@ meuns.forEach(item=>{
 });
 
 
-
+//main slide
 for(let i = 0; i<slideCount; i++){
   let cloneSlide = slides[i].cloneNode(true);
   cloneSlide.classList.add('clone');
@@ -36,12 +64,10 @@ for(let i = slideCount-1; i >= 0; i--){
   slideContainer.prepend(cloneSlide);
 }
 
-
 let allslides = slideContainer.querySelectorAll('li');
 let newslideCount = allslides.length;
 
 slideContainer.style.width =slideWidth*newslideCount+'px';
-
 
 function setLayout(){
   slideWidth = slideWrapper.offsetWidth;
@@ -63,6 +89,7 @@ function goToslide(num){
   }
   allslides[slideCount + num].classList.add('active');
   console.log(currentIdx);
+
   if(currentIdx === -3){
     setTimeout(()=>{
       slideContainer.classList.remove('animated');
@@ -85,9 +112,6 @@ function goToslide(num){
     },500);
   }
 }
-
-
-//top btn
 leftBtn.addEventListener('click',((e)=>{
   e.preventDefault();
   goToslide(currentIdx-1);
@@ -98,25 +122,163 @@ rightBtn.addEventListener('click',((e)=>{
 }));
 goToslide(0);
 
+// function AutoSlide(){
+//   timer = setInterval(()=>{
+//     let nextIdx = (currentIdx + 1)% slideCount;
 
-function AutoSlide(){
-  timer = setInterval(()=>{
-    let nextIdx = (currentIdx + 1)% slideCount;
+//     goToslide(nextIdx);
+//   }, 4000);
+// }
 
-    goToslide(nextIdx);
-  }, 4000);
+// AutoSlide();
+
+// slideWrapper.addEventListener('mouseenter', ()=>{clearInterval(timer);
+// });
+// slideWrapper.addEventListener('mouseleave', ()=>{ AutoSlide();});
+
+
+//best slide
+function moveSlide(num){
+  bsetContainer.style.left = `${-num * (bestWidth + bestgap)}px`;
+  currentIdx = num;
+
+  if(currentIdx >= bestCount-bsetmaxSlide){
+    nextBtn.classList.add('disabled');
+  } else {
+    nextBtn.classList.remove('disabled');
+  }
+
+  if(currentIdx === 0){
+    prevBtn.classList.add('disabled');
+  } else {
+    prevBtn.classList.remove('disabled');
+  }
 }
 
-AutoSlide();
-
-slideWrapper.addEventListener('mouseenter', ()=>{clearInterval(timer);
+nextBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(currentIdx < bestCount - bsetmaxSlide) {
+    moveSlide(currentIdx + 1);
+  }
 });
-slideWrapper.addEventListener('mouseleave', ()=>{ AutoSlide();});
+
+prevBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(currentIdx > 0) {
+    moveSlide(currentIdx - 1);
+  }
+});
+
+moveSlide(0);
+
+//arrival slide
+function moveToSlide(num){
+  arrContainer.style.left = `${-num * (arrWidth + arrgap)}px`;
+  currentIdx = num;
+
+  if(currentIdx >= arrCount-arrmaxSlide){
+    arrnextBtn.classList.add('disabled');
+  } else {
+    arrnextBtn.classList.remove('disabled');
+  }
+
+  if(currentIdx === 0){
+    arrprevBtn.classList.add('disabled');
+  } else {
+    arrprevBtn.classList.remove('disabled');
+  }
+}
+
+arrnextBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(currentIdx < arrCount - arrmaxSlide) {
+    moveToSlide(currentIdx + 1);
+  }
+});
+
+arrprevBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(currentIdx > 0) {
+    moveToSlide(currentIdx - 1);
+  }
+});
+
+moveToSlide(0);
+
+//event slide
+for(let i = 0; i<eventCount; i++){
+  let cloneSlide = eventslides[i].cloneNode(true);
+  cloneSlide.classList.add('clone');
+  eventContainer.appendChild(cloneSlide);
+}
+
+for(let i = eventCount-1; i >= 0; i--){
+  let cloneSlide = eventslides[i].cloneNode(true);
+  cloneSlide.classList.add('clone');
+  eventContainer.prepend(cloneSlide);
+}
+
+let allEventSlied = eventContainer .querySelectorAll('li');
+let NewEventSlideCount = allEventSlied.length;
+
+eventContainer.style.width =eventWidth*NewEventSlideCount+'px';
+
+function setToLayout(){
+  eventWidth = eventWrapper.offsetWidth;
+  eventContainer.style.transform = `translateX(-${eventWidth*eventCount}px)`;
+  eventContainer.style.width =eventWidth*NewEventSlideCount+'px';
+}
+setToLayout();
+
+window.addEventListener('resize',()=>{
+  setToLayout();
+})
+
+function goslide(num){
+  eventContainer.style.left = `${-num * (slideWidth+eventgap)}px`;
+  currentIdx =num;
+  
+  for(let h2 of allEventSlied){
+    h2.classList.remove('active');
+  }
+  allEventSlied[eventCount + num].classList.add('active');
+  console.log(currentIdx);
+
+  if(currentIdx === -5){
+    setTimeout(()=>{
+      eventContainer.classList.remove('animated');
+      eventContainer.style.left = 0;
+      currentIdx = 0;
+    },400);
+    setTimeout(()=>{
+      eventContainer.classList.add('animated');
+    },500);
+  }
+
+  if(currentIdx == eventCount*2-1){
+    setTimeout(()=>{
+      eventContainer.classList.remove('animated');
+      eventContainer.style.left = `${(eventCount-1)*-100}%`;
+      currentIdx = eventCount-1;
+    },400);
+    setTimeout(()=>{
+      eventContainer.classList.add('animated');
+    },500);
+  }
+}
+
+eventnextBtn.addEventListener('click',((e)=>{
+  e.preventDefault();
+  goslide(currentIdx+1);
+}));
+eventprevBtn.addEventListener('click',((e)=>{
+  e.preventDefault();
+  goslide(currentIdx-1);
+}));
+goslide(0);
 
 
-
-
-
+//top btn
 document.addEventListener('DOMContentLoaded',()=>{
   const goTop = document.querySelector('#go-top');
 

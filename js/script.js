@@ -42,7 +42,7 @@ let newslideCount = allslides.length;
 
 slideContainer.style.width =slideWidth*newslideCount+'px';
 
-//main slide
+
 function setLayout(){
   slideWidth = slideWrapper.offsetWidth;
   slideContainer.style.transform = `translateX(-${slideWidth*slideCount}px)`;
@@ -87,7 +87,7 @@ function goToslide(num){
 }
 
 
-
+//top btn
 leftBtn.addEventListener('click',((e)=>{
   e.preventDefault();
   goToslide(currentIdx-1);

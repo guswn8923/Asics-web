@@ -9,9 +9,9 @@ let currentIdx = 0;
 let leftBtn = slideWrapper.querySelector('#left');
 let rightBtn = slideWrapper.querySelector('#right');
 let timer;
+let slideWidth = 0;
 
-
-
+//sitemap
 meuns.forEach(item=>{
   item.addEventListener('mouseenter',(e)=>{
     let subMenuHeight = e.target.querySelector('div').offsetHeight;
@@ -22,10 +22,6 @@ meuns.forEach(item=>{
   });
 });
 
-
-  let slideWidth = slideWrapper.offsetWidth;
-  console.log(slideWidth);
-  slideContainer.style.transform = `translateX(-${slideWidth*slideCount}px)`
 
 
 for(let i = 0; i<slideCount; i++){
@@ -46,6 +42,17 @@ let newslideCount = allslides.length;
 
 slideContainer.style.width =slideWidth*newslideCount+'px';
 
+//main slide
+function setLayout(){
+  slideWidth = slideWrapper.offsetWidth;
+  slideContainer.style.transform = `translateX(-${slideWidth*slideCount}px)`;
+  slideContainer.style.width =slideWidth*newslideCount+'px';
+}
+setLayout();
+
+window.addEventListener('resize',()=>{
+  setLayout();
+})
 
 function goToslide(num){
   slideContainer.style.left = `${-num * slideWidth}px`;
@@ -106,11 +113,12 @@ slideWrapper.addEventListener('mouseenter', ()=>{clearInterval(timer);
 });
 slideWrapper.addEventListener('mouseleave', ()=>{ AutoSlide();});
 
+
+
+
+
 document.addEventListener('DOMContentLoaded',()=>{
   const goTop = document.querySelector('#go-top');
-
-
-  
 
   window.addEventListener('scroll',()=>{
     let scrollAmt = window.scrollY;

@@ -1,6 +1,16 @@
 let meuns = document.querySelectorAll('nav > ul > li');
 let main_menu = document.querySelector('.main_menu');
 let mainOrgHeight = main_menu.offsetHeight;
+let slideWrapper = document.querySelector('.slide_wrapper');
+let slideContainer = slideWrapper.querySelector('.slides');
+let slides = slideContainer.querySelectorAll('li');
+let slideCount = slides.length;
+let currentIdx = 0;
+let leftBtn = slideWrapper.querySelector('#left');
+let rightBtn = slideWrapper.querySelector('#right');
+let timer;
+
+
 
 meuns.forEach(item=>{
   item.addEventListener('mouseenter',(e)=>{
@@ -12,87 +22,100 @@ meuns.forEach(item=>{
   });
 });
 
-const slideWrapper = document.querySelector('.slide_wrapper');
-const slideContainer = slideWrapper.querySelector('.slides');
-let slides = slideContainer.querySelectorAll('li');
-let currentIdx = 0;
-let slideCount = slides.length;
-const slidToShow = 1;
-const leftBtn =slideWrapper.querySelector('#left');
-const rightBtn =slideWrapper.querySelector('#right');
-let timer;
-let slideWidth = slideWrapper.offsetWidth;
 
-//복사본 생성
-  for(let slide of slides){
-  let slideClone = slide.cloneNode(true);
-  slideContainer.appendChild(slideClone);
+  let slideWidth = slideWrapper.offsetWidth;
+  console.log(slideWidth);
+  slideContainer.style.tranform = `translateX(-${slideWidth*slideCount}px)`
+
+
+for(let i = 0; i<slideCount; i++){
+  let cloneSlide = slides[i].cloneNode(true);
+  cloneSlide.classList.add('clone');
+  slideContainer.appendChild(cloneSlide);
 }
 
-  for(let i = 2;i>=0;i--){
-  let slideClone = slides[i].cloneNode(true);
-  slideContainer.prepend(slideClone);
+for(let i = slideCount-1; i >= 0; i--){
+  let cloneSlide = slides[i].cloneNode(true);
+  cloneSlide.classList.add('clone');
+  slideContainer.prepend(cloneSlide);
 }
 
-slides = slideContainer.querySelectorAll('li');
-let newslideCount = slides.length;
+
+let allslides = slideContainer.querySelectorAll('li');
+let newslideCount = allslides.length;
+
+slideContainer.style.width =slideWidth*newslideCount+'px';
+
+allslides.forEach((item, idx)=>{
+  item.style.left = `${idx * 100}%`;
+});
 
 
-function moveSlide(idx){
-  for(let slide of slides){
-    slide.classList.remove('animated');
+
+function goToslide(num){
+  slideContainer.style.left = `${-num * slideWidth}px`;
+  currentIdx =num;
+  
+  for(let h2 of allslides){
+    h2.classList.remove('active');
   }
-}
-slideContainer.style.left = `${slideWidth * -idx}px`;
-currentIdx = idx;
-
-  if(currentIdx == slideCount || currentIdx == -slideCount){
+  allslides[slideCount + num].classList.add('active');
+  console.log(currentIdx);
+  if(currentIdx === -3){
     setTimeout(()=>{
       slideContainer.classList.remove('animated');
       slideContainer.style.left = 0;
-    }, 500);
+      currentIdx = 0;
+    },400);
     setTimeout(()=>{
       slideContainer.classList.add('animated');
-    }, 550);
-    currentIdx = 0;
+    },500);
   }
 
-leftBtn.addEventListener('click',(()=>{
-  moveSlide(currentIdx-1);
-},500));
-rightBtn.addEventListener('click',(()=>{
-  moveSlide(currentIdx+1);
-},500));
+  if(currentIdx == slideCount*2-1){
+    setTimeout(()=>{
+      slideContainer.classList.remove('animated');
+      slideContainer.style.left = `${(slideCount-1)*-100}%`;
+      currentIdx = slideCount-1;
+    },400);
+    setTimeout(()=>{
+      slideContainer.classList.add('animated');
+    },500);
+  }
+}
 
-slideContainer.addEventListener('mouseenter',()=>{
-  clearInterval(timer);
+
+
+leftBtn.addEventListener('click',((e)=>{
+  e.preventDefault();
+  goToslide(currentIdx-1);
+}));
+rightBtn.addEventListener('click',((e)=>{
+  e.preventDefault();
+  goToslide(currentIdx+1);
+}));
+goToslide(0);
+
+
+function AutoSlide(){
+  timer = setInterval(()=>{
+    let nextIdx = (currentIdx + 1)% slideCount;
+
+    goToslide(nextIdx);
+  }, 4000);
+}
+
+AutoSlide();
+
+slideWrapper.addEventListener('mouseenter', ()=>{clearInterval(timer);
 });
-slideContainer.addEventListener('mouseleave',()=>{
-  autoSlide();
-});
-
-// let xAxis = {
-//   downX:0,
-//   upX:0
-// };
-
-// slideContainer.addEventListener('mousedown',(e)=>{
-//   xAxis.downX = e.clientX;
-// });
-// slideContainer.addEventListener('mouseup',(e)=>{
-//   xAxis.upX = e.clientX;
-//   let diffenceX = xAxis.downX - xAxis.upX;
-
-//   if(diffenceX > 0){
-//     moveSlide(currentIdx + 1);
-//   }else{
-//     moveSlide(currentIdx - 1);
-//   }
-// });
-
+slideWrapper.addEventListener('mouseleave', ()=>{ AutoSlide();});
 
 document.addEventListener('DOMContentLoaded',()=>{
   const goTop = document.querySelector('#go-top');
+
+
+  
 
   window.addEventListener('scroll',()=>{
     let scrollAmt = window.scrollY;

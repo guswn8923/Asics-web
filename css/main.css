@@ -210,10 +210,10 @@ header .container .search{
 }
 
 .contain .slides{
+    position: relative;
     width: 5760px;
     margin: 0;
     padding: 0;
-    height: 0;
     display: flex;
 }
 

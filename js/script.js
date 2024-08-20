@@ -25,7 +25,7 @@ meuns.forEach(item=>{
 
   let slideWidth = slideWrapper.offsetWidth;
   console.log(slideWidth);
-  slideContainer.style.tranform = `translateX(-${slideWidth*slideCount}px)`
+  slideContainer.style.transform = `translateX(-${slideWidth*slideCount}px)`
 
 
 for(let i = 0; i<slideCount; i++){
@@ -45,11 +45,6 @@ let allslides = slideContainer.querySelectorAll('li');
 let newslideCount = allslides.length;
 
 slideContainer.style.width =slideWidth*newslideCount+'px';
-
-allslides.forEach((item, idx)=>{
-  item.style.left = `${idx * 100}%`;
-});
-
 
 
 function goToslide(num){

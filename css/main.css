@@ -36,7 +36,6 @@ font-family: "Gothic A1", sans-serif;
     padding: 10px 40px 40px ;
     z-index: 100000;
     line-height: 2;
-    font-size: var(--font-main);
 }
 .pophd{
     text-align: center;
@@ -65,7 +64,7 @@ hr{
 }
 
 #check {
-    margin-right: 300px;
+    margin-right: 250px;
 }
 input[type="checkbox"]{
     width: 30px;

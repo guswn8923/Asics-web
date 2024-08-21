@@ -13,8 +13,6 @@
   <meta property="og:description" content="아식스 웹사이트를 새롭게 디자인한 포트폴리오 프로젝트입니다. 현대적인 디자인과 사용하기 편한 기능들을 강조했습니다." >
 
   
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>asics</title>
   <link rel="apple-touch-icon" sizes="57x57" href="imgs/favicon/apple-icon-57x57.png">
@@ -65,6 +63,19 @@
       <label for="check">하루동안 안 보기</label>
       <input type="checkbox" id="check">
       <button id="closeBtn">닫기</button>
+    </div>
+  </div>
+  <div class="event_popup" id="evcookie_Popup">
+    <h2>신규 회원가입 이벤트</h2>
+    <div class="event_popct">
+      <p>신규 회원 가입 시 
+        <br>
+        10,000 포인트 증정</p>
+    </div>
+    <div class="event_cookie">
+      <label for="event_check">하루동안 안 보기</label>
+      <input type="checkbox" id="event_check">
+      <button id="event_closeBtn">닫기</button>
     </div>
   </div>
   <header>
@@ -237,8 +248,10 @@
               </div>
           </li>
         </ul>
-           <a href="" id="left" class="controls"><i class="fa-solid fa-chevron-left"></i></a>
-           <a href="" id="right" class="controls"><i class="fa-solid fa-chevron-right"></i></a>
+           <div class="main_btn">
+             <a href="" id="left" class="controls"><i class="fa-solid fa-chevron-left"></i></a>
+             <a href="" id="right" class="controls"><i class="fa-solid fa-chevron-right"></i></a>
+           </div>
       </div>
     </div>
   </header>

@@ -25,7 +25,65 @@ font-family: "Gothic A1", sans-serif;
     --container : 1760px;
     --lh : 26px;
 }
+/*cookie*/
+.popup{
+    position: fixed;
+    left: 100px;
+    top: 100px;
+    background: var(--secondary-color);
+    border: 20px solid var(--sub-color);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
+    padding: 10px 40px 40px ;
+    z-index: 100000;
+    line-height: 2;
+    font-size: var(--font-main);
+}
+.pophd{
+    text-align: center;
+    margin: 20px 0;
+}
+.popup h2 > span{
+    font-weight: 700;
+}
+.popct{
+    margin: 20px 0;
+}
+hr{
+  height: 4px;
+  background-color: var(--primary-color);
+  border: none;
+}
+.popup > p{
+    margin: 20px 0;
+}
 
+.cookie{
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#check {
+    margin-right: 300px;
+}
+input[type="checkbox"]{
+    width: 30px;
+    height: 30px;
+}
+
+button{
+    padding: 5px 10px;
+    background-color: #000;
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+button:hover {
+    background-color: var(--sub-color);
+    color: #000;
+}
 
 /* 레이아웃 */
 

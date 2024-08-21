@@ -38,6 +38,20 @@ let eventWidth = 365;
 let eventgap = 15;
 let eventmasSlide = 5;
 
+//cookie
+  document.addEventListener("DOMContentLoaded", () => {
+  if (document.cookie.includes("hidePopup=true")) {
+      document.getElementById("cookiePopup").style.display = "none";
+  }
+
+  document.getElementById("closeBtn").addEventListener("click", () => {
+      if (document.getElementById("check").checked) {
+          document.cookie = `hidePopup=true; expires=${new Date(Date.now() + 864e5).toUTCString()}; path=/`;
+      }
+      document.getElementById("cookiePopup").style.display = "none";
+  });
+});
+
 
 //sitemap
 meuns.forEach(item=>{
@@ -88,7 +102,7 @@ function goToslide(num){
     h2.classList.remove('active');
   }
   allslides[slideCount + num].classList.add('active');
-  console.log(currentIdx);
+
 
   if(currentIdx === -3){
     setTimeout(()=>{
@@ -235,24 +249,23 @@ window.addEventListener('resize',()=>{
 })
 
 function goslide(num){
-  eventContainer.style.left = `${-num * (slideWidth+eventgap)}px`;
+  eventContainer.style.left = `${-num * (eventWidth+eventgap)}px`;
   currentIdx =num;
   
   for(let h2 of allEventSlied){
     h2.classList.remove('active');
   }
   allEventSlied[eventCount + num].classList.add('active');
-  console.log(currentIdx);
 
   if(currentIdx === -5){
     setTimeout(()=>{
       eventContainer.classList.remove('animated');
       eventContainer.style.left = 0;
       currentIdx = 0;
-    },400);
+    },500);
     setTimeout(()=>{
       eventContainer.classList.add('animated');
-    },500);
+    },600);
   }
 
   if(currentIdx == eventCount*2-1){
@@ -260,10 +273,10 @@ function goslide(num){
       eventContainer.classList.remove('animated');
       eventContainer.style.left = `${(eventCount-1)*-100}%`;
       currentIdx = eventCount-1;
-    },400);
+    },500);
     setTimeout(()=>{
       eventContainer.classList.add('animated');
-    },500);
+    },600);
   }
 }
 

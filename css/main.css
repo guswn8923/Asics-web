@@ -36,7 +36,7 @@ font-family: "Gothic A1", sans-serif;
     padding: 10px 40px 40px ;
     z-index: 100000;
     line-height: 2;
-    font-size: 23px;
+    font-size: var(--font-site-map);
 }
 .pophd{
     text-align: center;
@@ -46,16 +46,16 @@ font-family: "Gothic A1", sans-serif;
     font-weight: 700;
 }
 .popct{
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .popup hr{
-  height: 4px;
+  height: 2px;
   background-color: var(--primary-color);
   border: none;
 }
 .popup .link{
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
 }
 
@@ -66,9 +66,9 @@ font-family: "Gothic A1", sans-serif;
 }
 
 .popup .link img{
-    width: 40px;
-    height: 40px;
-    margin-left: 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
 }
 
 .popup > p{
@@ -76,18 +76,18 @@ font-family: "Gothic A1", sans-serif;
 }
 
 .cookie{
-    padding-top: 70px;
+    padding-top: 30px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 #check {
-    margin-right: 250px;
+    margin-right: 100px;
 }
 input[type="checkbox"]{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 button{
@@ -425,7 +425,7 @@ main .main_img{
 }
 
 .best-container>li:hover{
-    border-color: red;
+    border-color: var(--primary-color);
 }
 
 .best-container>li .imgwrap{

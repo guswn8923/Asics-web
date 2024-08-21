@@ -36,6 +36,7 @@ font-family: "Gothic A1", sans-serif;
     padding: 10px 40px 40px ;
     z-index: 100000;
     line-height: 2;
+    font-size: 23px;
 }
 .pophd{
     text-align: center;
@@ -52,6 +53,24 @@ hr{
   background-color: var(--primary-color);
   border: none;
 }
+.popup .link{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.popup .link a{
+    color: #FF1493;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.popup .link img{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
 .popup > p{
     margin: 20px 0;
 }

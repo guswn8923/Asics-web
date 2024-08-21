@@ -101,6 +101,7 @@ body{
     font: var(--font-site-map-title)/var(--lh) "Gothic A1", sans-serif;
     color: var(--black-color);
     overflow-y: scroll;
+    overflow-x: hidden;
     padding-top: 203px;
 }
 
@@ -1046,6 +1047,7 @@ width: 30px;
     text-align: center;
     font-weight: 700;
     opacity: 0;
+    font-size: var(--font-site-map-title);
 }
 
 #go-top:hover{

@@ -34,7 +34,7 @@ font-family: "Gothic A1", sans-serif;
     border: 20px solid var(--sub-color);
     box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
     padding: 10px 40px 40px ;
-    z-index: 100000;
+    z-index: 1000;
     line-height: 2;
     font-size: var(--font-site-map);
 }
@@ -103,6 +103,56 @@ button:hover {
     color: #000;
 }
 
+/*event_cookie*/
+.event_popup{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    background: #d3c7db;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
+    padding: 40px 40px ;
+    z-index: 100000;
+    line-height: 2;
+    font-size: var(--font-site-map);
+    border: 5px solid #52466c;
+    border-radius: 20px;
+}
+
+.event_popup h2{
+    background: #52466c;
+    color: var(--white-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.event_popct{
+    font-size: var(--font-main);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.event_cookie{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#event_closeBtn{
+    padding: 5px 10px;
+    background-color: #52466c;
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 30px;
+}
+
+#event_closeBtn:hover{
+    background-color: var(--white-color);
+    color: #000;
+}
+
 /* 레이아웃 */
 
 main>section{
@@ -136,11 +186,6 @@ section .sec_tt{
 }
 
 /* HEADER */
-.top_nav .container{
-    background: #fff;
-    width: 100%;
-}
-
 .top_nav{
     padding:  45px 0 0 0;
     position: absolute;
@@ -148,17 +193,20 @@ section .sec_tt{
     right: 0;
     top: 0;
     z-index: 100;
+    position: fixed;
+    background: var(--white-color);
+    box-shadow: 0 3px 3px rgba(0 , 0, 0, .06);
 }
+
+.top_nav .container{
+    background: var(--white-color);
+    width: 100%;
+}
+
 
 .top_nav nav{
     display: flex;
     align-items: flex-start;
-}
-
-.top_nav.fixed{
-    position: fixed;
-    background: rgba(225, 225, 225, .5);
-    box-shadow: 0 3px 3px rgba(0 , 0, 0, .06);
 }
 
 header nav > div{
@@ -200,6 +248,7 @@ nav > ul > li{
     line-height: 35px;
     padding: 0;
     padding-right: 50px;
+
 }
 
 nav > ul > li div{
@@ -211,9 +260,16 @@ nav > ul > li div{
     font-weight: 500;
 }
 
+nav > ul > li div ul,
+nav > ul > li div dl{
+    cursor: pointer;
+}
+
+
 nav > ul > li div ul li{
     font-weight: 700;
     padding-bottom: 22px;
+    
 }
 
 
@@ -360,8 +416,9 @@ header .container .search{
     top: 50%;
     transform: translateY(-50%);
     z-index: 9999999;
-    color: var(--white-color);
+    color: rgba(255, 255, 255, .2);
     font-size: 50px;
+    transition: 0.3s;
 }
 #right{
     right: 20px;
@@ -369,6 +426,10 @@ header .container .search{
 
 #left{
     left: 20px;
+}
+
+.main_btn:hover .controls{
+    color: var(--white-color);
 }
 
 /*main*/
@@ -442,11 +503,11 @@ main .main_img{
 }
 
 .best-container li div h4{
-    margin: 22px 0 10px 27px;
+    margin: 22px 0 10px 0;
 }
 
 .best-container li div>p{
-    margin: 10px 0 10px 27px;
+    margin: 10px 0 10px 0;
     font-weight: 700;
 }
 
@@ -456,6 +517,7 @@ main .main_img{
     height: 20px;
     border-radius: 50%;
     margin-right: 5px;
+    box-sizing: border-box;
 }
 
 /*bset item color*/
@@ -509,7 +571,12 @@ main .main_img{
 /*best item size*/
 .size{
     border-bottom: 2px solid var(--primary-color);
+
 }
+
+.size > :not(.hall) {
+    padding-left: 27px;
+  }
 
 .size ul{
     width: 290px;
@@ -522,6 +589,12 @@ main .main_img{
 
 .size ul li{
     cursor: pointer;
+    transition: 0.3s;
+}
+.size ul li:hover{
+    font-weight: 700;
+    text-decoration: underline;
+    color: var(--sub-color);
 }
 
 .hall>div{
@@ -607,6 +680,12 @@ main .main_img{
     color: var(--white-color);
     text-align: center;
     font-weight: 700;
+    transition: 0.3s;
+}
+
+.all:hover{
+    background-color:rgba(52, 100, 214, 1);
+    box-shadow: 0 4px 1px rgba(0, 0, 0, .25);
 }
 
 /*new_arrival*/
@@ -661,11 +740,11 @@ main .main_img{
 }
 
 .arrival-container li div h4{
-    margin: 22px 0 10px 27px;
+    margin: 22px 0 10px 0;
 }
 
 .arrival-container li div>p{
-    margin: 10px 0 10px 27px;
+    margin: 10px 0 10px 0;
     font-weight: 700;
 }
 
@@ -675,6 +754,7 @@ main .main_img{
     height: 20px;
     border-radius: 50%;
     margin-right: 5px;
+    box-sizing: border-box;
 }
 
 /*new_arrival color*/
@@ -824,11 +904,11 @@ main .main_img{
 }
 
 .exitem-container li div h4{
-    margin: 22px 0 10px 27px;
+    margin: 22px 0 10px 0;
 }
 
 .exitem-container li .size>p{
-    margin: 10px 0 10px 27px;
+    margin: 10px 0 10px 0;
     font-weight: 700;
 }
 
@@ -838,6 +918,7 @@ main .main_img{
     height: 20px;
     border-radius: 50%;
     margin-right: 5px;
+    box-sizing: border-box;
 }
 
 /*exercise item color*/
@@ -886,8 +967,6 @@ main .main_img{
    }
 
 /*ASICS EVENT */
-
-
 .asics_event h2{
     text-transform: uppercase;
     font-size: var(--font-Banner-main);
@@ -962,7 +1041,7 @@ footer .container{
 
 .white_logo a{
     width: 128px;
-    height: 48px;
+    height: 40px;
     background: url(../imgs/logo_white.png) no-repeat;
     display: inline-block;
     text-indent: -999999em;
@@ -972,6 +1051,7 @@ footer .container{
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     border: none;
     border-bottom: 1px solid #C0C0C0;
     padding-bottom: 40px;

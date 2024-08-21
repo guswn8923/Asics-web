@@ -48,7 +48,7 @@ font-family: "Gothic A1", sans-serif;
 .popct{
     margin: 20px 0;
 }
-hr{
+.popup hr{
   height: 4px;
   background-color: var(--primary-color);
   border: none;
@@ -425,7 +425,7 @@ main .main_img{
 }
 
 .best-container>li:hover{
-    border-color: var(--primary-color);
+    border-color: red;
 }
 
 .best-container>li .imgwrap{
@@ -507,9 +507,9 @@ main .main_img{
 }
 
 /*best item size*/
-/* .size{
+.size{
     border-bottom: 2px solid var(--primary-color);
-} */
+}
 
 .size ul{
     width: 290px;

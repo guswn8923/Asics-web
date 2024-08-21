@@ -14,7 +14,8 @@ let bsetWrapper = document.querySelector('.best-wrapper');
 let bsetContainer = bsetWrapper.querySelector('.best-container');
 let bestslides = bsetContainer.querySelectorAll('.best-container > li');
 let bestCount = bestslides.length;
-let bestWidth = 338;
+let bestCurrentIdx = 0;
+let bestWidth = 342;
 let bestgap = 30
 let bsetmaxSlide = 3;
 let nextBtn = bsetWrapper.querySelector('#next');
@@ -25,7 +26,8 @@ let arrslides = arrContainer.querySelectorAll('.arrival-container > li');
 let arrnextBtn = arrWrapper.querySelector('#nexarr');
 let arrprevBtn = arrWrapper.querySelector('#prearr'); 
 let arrCount = arrslides.length;
-let arrWidth = 338;
+let arrCurrentIdx = 0;
+let arrWidth = 342;
 let arrgap = 10;
 let arrmaxSlide = 5;
 let eventWrapper = document.querySelector('.event-wrapper');
@@ -34,9 +36,11 @@ let eventslides = eventContainer.querySelectorAll('.event-contain > li');
 let eventnextBtn = eventWrapper.querySelector('#next_en');
 let eventprevBtn = eventWrapper.querySelector('#prev_en'); 
 let eventCount = eventslides.length;
+let eventCurrentIdx = 0;
 let eventWidth = 365;
 let eventgap = 15;
 let eventmasSlide = 5;
+let timertwo;
 
 //cookie
   document.addEventListener("DOMContentLoaded", () => {
@@ -136,33 +140,33 @@ rightBtn.addEventListener('click',((e)=>{
 }));
 goToslide(0);
 
-// function AutoSlide(){
-//   timer = setInterval(()=>{
-//     let nextIdx = (currentIdx + 1)% slideCount;
+function AutoSlide(){
+  timer = setInterval(()=>{
+    let nextIdx = (currentIdx + 1)% slideCount;
 
-//     goToslide(nextIdx);
-//   }, 4000);
-// }
+    goToslide(nextIdx);
+  }, 4000);
+}
 
-// AutoSlide();
+AutoSlide();
 
-// slideWrapper.addEventListener('mouseenter', ()=>{clearInterval(timer);
-// });
-// slideWrapper.addEventListener('mouseleave', ()=>{ AutoSlide();});
+slideWrapper.addEventListener('mouseenter', ()=>{clearInterval(timer);
+});
+slideWrapper.addEventListener('mouseleave', ()=>{ AutoSlide();});
 
 
 //best slide
 function moveSlide(num){
   bsetContainer.style.left = `${-num * (bestWidth + bestgap)}px`;
-  currentIdx = num;
+  bestCurrentIdx  = num;
 
-  if(currentIdx >= bestCount-bsetmaxSlide){
+  if(bestCurrentIdx  >= bestCount-bsetmaxSlide){
     nextBtn.classList.add('disabled');
   } else {
     nextBtn.classList.remove('disabled');
   }
 
-  if(currentIdx === 0){
+  if(bestCurrentIdx  === 0){
     prevBtn.classList.add('disabled');
   } else {
     prevBtn.classList.remove('disabled');
@@ -171,15 +175,15 @@ function moveSlide(num){
 
 nextBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if(currentIdx < bestCount - bsetmaxSlide) {
-    moveSlide(currentIdx + 1);
+  if(bestCurrentIdx  < bestCount - bsetmaxSlide) {
+    moveSlide(bestCurrentIdx  + 1);
   }
 });
 
 prevBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if(currentIdx > 0) {
-    moveSlide(currentIdx - 1);
+  if(bestCurrentIdx  > 0) {
+    moveSlide(bestCurrentIdx  - 1);
   }
 });
 
@@ -188,15 +192,15 @@ moveSlide(0);
 //arrival slide
 function moveToSlide(num){
   arrContainer.style.left = `${-num * (arrWidth + arrgap)}px`;
-  currentIdx = num;
+  arrCurrentIdx = num;
 
-  if(currentIdx >= arrCount-arrmaxSlide){
+  if(arrCurrentIdx >= arrCount-arrmaxSlide){
     arrnextBtn.classList.add('disabled');
   } else {
     arrnextBtn.classList.remove('disabled');
   }
 
-  if(currentIdx === 0){
+  if(arrCurrentIdx === 0){
     arrprevBtn.classList.add('disabled');
   } else {
     arrprevBtn.classList.remove('disabled');
@@ -205,15 +209,15 @@ function moveToSlide(num){
 
 arrnextBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if(currentIdx < arrCount - arrmaxSlide) {
-    moveToSlide(currentIdx + 1);
+  if(arrCurrentIdx < arrCount - arrmaxSlide) {
+    moveToSlide(arrCurrentIdx + 1);
   }
 });
 
 arrprevBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if(currentIdx > 0) {
-    moveToSlide(currentIdx - 1);
+  if(arrCurrentIdx > 0) {
+    moveToSlide(arrCurrentIdx - 1);
   }
 });
 
@@ -238,8 +242,7 @@ let NewEventSlideCount = allEventSlied.length;
 eventContainer.style.width =eventWidth*NewEventSlideCount+'px';
 
 function setToLayout(){
-  eventWidth = eventWrapper.offsetWidth;
-  eventContainer.style.transform = `translateX(-${eventWidth*eventCount}px)`;
+  eventContainer.style.transform = `translateX(-${eventWidth*eventCount+(eventgap*(allEventSlied-1))}px)`;
   eventContainer.style.width =eventWidth*NewEventSlideCount+'px';
 }
 setToLayout();
@@ -250,29 +253,29 @@ window.addEventListener('resize',()=>{
 
 function goslide(num){
   eventContainer.style.left = `${-num * (eventWidth+eventgap)}px`;
-  currentIdx =num;
+  eventCurrentIdx =num;
   
   for(let h2 of allEventSlied){
     h2.classList.remove('active');
   }
   allEventSlied[eventCount + num].classList.add('active');
 
-  if(currentIdx === -5){
+  if(eventCurrentIdx === -5){
     setTimeout(()=>{
       eventContainer.classList.remove('animated');
       eventContainer.style.left = 0;
-      currentIdx = 0;
+      eventCurrentIdx = 0;
     },500);
     setTimeout(()=>{
       eventContainer.classList.add('animated');
     },600);
   }
 
-  if(currentIdx == eventCount*2-1){
+  if(eventCurrentIdx == eventCount*2-1){
     setTimeout(()=>{
       eventContainer.classList.remove('animated');
       eventContainer.style.left = `${(eventCount-1)*-100}%`;
-      currentIdx = eventCount-1;
+      eventCurrentIdx = eventCount-1;
     },500);
     setTimeout(()=>{
       eventContainer.classList.add('animated');
@@ -282,14 +285,27 @@ function goslide(num){
 
 eventnextBtn.addEventListener('click',((e)=>{
   e.preventDefault();
-  goslide(currentIdx+1);
+  goslide(eventCurrentIdx+1);
 }));
 eventprevBtn.addEventListener('click',((e)=>{
   e.preventDefault();
-  goslide(currentIdx-1);
+  goslide(eventCurrentIdx-1);
 }));
 goslide(0);
 
+function AutoTSlide(){
+  timertwo = setInterval(()=>{
+    let ntIdx = (eventCurrentIdx + 1)% eventCount;
+
+    goslide(ntIdx);
+  }, 3000);
+}
+
+AutoTSlide();
+
+eventWrapper.addEventListener('mouseenter', ()=>{clearInterval(timertwo);
+});
+eventWrapper.addEventListener('mouseleave', ()=>{ AutoTSlide();});
 
 //top btn
 document.addEventListener('DOMContentLoaded',()=>{

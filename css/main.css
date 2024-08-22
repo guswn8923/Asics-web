@@ -85,7 +85,7 @@ font-family: "Gothic A1", sans-serif;
 #check {
     margin-right: 100px;
 }
-input[type="checkbox"]{
+.cookie input[type="checkbox"]{
     width: 20px;
     height: 20px;
 }
@@ -106,46 +106,35 @@ button:hover {
 /*event_cookie*/
 .event_popup{
     position: fixed;
-    right: 50px;
-    bottom: 50px;
-    background: #d3c7db;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
-    padding: 40px 40px ;
-    z-index: 100000;
-    line-height: 2;
-    font-size: var(--font-site-map);
-    border: 5px solid #52466c;
-    border-radius: 20px;
-}
-
-.event_popup h2{
-    background: #52466c;
-    color: var(--white-color);
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.event_popct{
-    font-size: var(--font-main);
-    text-align: center;
-    line-height: 1.5;
+    right: -12%;
+    bottom: -30%;
+    transform: scale(35%);
+    z-index: 10000;
 }
 
 .event_cookie{
-    padding-top: 30px;
+    position: absolute;
+    left: 80px;
+    bottom: 30px;
     display: flex;
     align-items: center;
     gap: 10px;
+    z-index: 1000000;
+    font-size: 25px;
+}
+.event_cookie input[type="checkbox"]{
+    width: 30px;
+    height: 30px;
 }
 
 #event_closeBtn{
     padding: 5px 10px;
-    background-color: #52466c;
-    color: var(--white-color);
+    background-color:var(--white-color);
+    color: #000;
     border: none;
     cursor: pointer;
     border-radius: 3px;
-    margin-left: 30px;
+    margin-left: 420px;
 }
 
 #event_closeBtn:hover{

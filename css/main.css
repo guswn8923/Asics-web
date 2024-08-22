@@ -176,7 +176,7 @@ section .sec_tt{
 
 /* HEADER */
 .top_nav{
-    padding:  45px 0 0 0;
+    padding-top:  30px;
     position: absolute;
     left: 0;
     right: 0;
@@ -195,7 +195,6 @@ section .sec_tt{
 
 .top_nav nav{
     display: flex;
-    align-items: flex-start;
 }
 
 header nav > div{
@@ -224,7 +223,7 @@ header nav > div{
 /*sitemap*/
 
 nav > ul{
-    margin: 45px 80px;
+    margin: 20px 80px;
     font-weight: 700;
     height: 30px;
     transition:height 0.5s ease-out;
@@ -277,7 +276,7 @@ form{
     display: flex;
     gap: 15px;
     align-items: flex-start;
-    margin: 35px 80px 0 0;
+    margin: 20px 80px 20px 0;
 }
 
 header .main_menu_icon{
